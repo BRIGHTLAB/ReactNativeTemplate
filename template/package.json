@@ -6,12 +6,15 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
+    "screen": "node src/cli/CreateScreenFolder.tsx",
+    "cmp": "node src/cli/CreateSharedComponent.tsx",
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
     "axios": "^1.2.2",
     "dayjs": "^1.11.7",
+    "fs-extra": "^11.1.0",
     "react": "18.1.0",
     "react-native": "0.70.6",
     "react-native-navigation": "^7.30.6",

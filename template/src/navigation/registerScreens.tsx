@@ -22,7 +22,6 @@ function WrappedComponent(Component) {
 
 export default function () {
   // add all screens below
-
   Navigation.registerComponent('Login', () => WrappedComponent(LoginView));
   Navigation.registerComponent('Home', () => WrappedComponent(HomeView));
   
