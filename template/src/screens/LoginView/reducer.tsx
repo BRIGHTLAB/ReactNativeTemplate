@@ -4,7 +4,9 @@ import {
 
 const INITAL_STATE = {
   loading: false,
-  data: []
+  data: [],
+  username: '',
+  password: ''
 };
 
 export default (state = INITAL_STATE, action) => {

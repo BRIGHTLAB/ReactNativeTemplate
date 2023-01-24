@@ -17,6 +17,7 @@
     "fs-extra": "^11.1.0",
     "react": "18.1.0",
     "react-native": "0.70.6",
+    "react-native-keyboard-aware-scroll-view": "^0.9.5",
     "react-native-navigation": "^7.30.6",
     "react-native-render-html": "^6.3.4",
     "react-native-webview": "^11.26.0",
