@@ -5,6 +5,7 @@ import store from '../store';
 
 // import from here
 import {
+ SignUpView,
   HomeView,
   LoginView
 } from 'src/screens';
@@ -24,6 +25,7 @@ export default function () {
   // add all screens below
   Navigation.registerComponent('Login', () => WrappedComponent(LoginView));
   Navigation.registerComponent('Home', () => WrappedComponent(HomeView));
+Navigation.registerComponent('SignUpView', () => WrappedComponent(SignUpView));
   
   console.info('All screens have been registered...');
 }

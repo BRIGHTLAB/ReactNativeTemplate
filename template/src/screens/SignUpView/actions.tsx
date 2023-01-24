@@ -1,41 +1,44 @@
 import {
-  LOGIN_DATA_UPDATE,
+  SIGNUPVIEW_DATA_UPDATE,
 } from './types';
 import axios from 'src/axiosConfig';
 import realm from 'src/models';
 
 import {Navigation} from 'react-native-navigation';
-import {mainRoot} from 'src/navigation/navigationStructures';
+import {loginRoot} from 'src/navigation/navigationStructures';
 
-export const loginViewChangeValue = (object: any) => {
+export const SignUpViewChangeValue = object => {
   return async dispatch => {
     dispatch({
-      type: LOGIN_DATA_UPDATE,
+      type: SIGNUPVIEW_DATA_UPDATE,
       payload: object,
     });
   };
 };
 
-export const login = (email: string, password:string) => {
+export const signUp = (firstName: string, lastName:string, email: string, password: string, phone_number: string) => {
   return async dispatch => {
       try{
 
         dispatch({
-          type: LOGIN_DATA_UPDATE,
+          type: SIGNUPVIEW_DATA_UPDATE,
           payload: {
             loading: true
           },
         });
 
-        console.log('username', email);
+        console.log('firstName', firstName);
+        console.log('lastName', lastName);
+        console.log('email', email);
+        console.log('phone_number', phone_number);
         console.log('password', password);
 
         // everything is ok ......
         // navigate to app, the user is logged in
-        Navigation.setRoot(mainRoot);
+        Navigation.setRoot(loginRoot);
 
         dispatch({
-          type: LOGIN_DATA_UPDATE,
+          type: SIGNUPVIEW_DATA_UPDATE,
           payload: {
             loading: false
           },
@@ -43,9 +46,9 @@ export const login = (email: string, password:string) => {
 
       }catch (e) {
         // if lofin error
-        console.log('Error in logging in', e);
+        console.log('Error in signing up', e);
         dispatch({
-          type: LOGIN_DATA_UPDATE,
+          type: SIGNUPVIEW_DATA_UPDATE,
           payload: {
             loading: false
           },

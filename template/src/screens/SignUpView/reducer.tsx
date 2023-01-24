@@ -1,17 +1,20 @@
 import {
-  LOGIN_DATA_UPDATE
+  SIGNUPVIEW_DATA_UPDATE
 } from './types';
 
 const INITAL_STATE = {
   loading: false,
   data: [],
+  firstName: '',
+  lastName: '',
+  password: '',
   email: '',
-  password: ''
+  phone_number: ''
 };
 
-export default (state = INITAL_STATE, action) => {
+export default (state = INITAL_STATE, action: any) => {
   switch (action.type) {
-    case LOGIN_DATA_UPDATE:
+    case SIGNUPVIEW_DATA_UPDATE:
       return {
         ...state,
         ...action.payload,

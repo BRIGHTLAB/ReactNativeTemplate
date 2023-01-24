@@ -4,7 +4,7 @@
 import React from 'react';
 import {Navigation} from 'react-native-navigation';
 import RegisterScreens from 'src/navigation/registerScreens';
-import {loginRoot, mainRoot} from 'src/navigation/navigationStructures';
+import {loginRoot, mainRoot, signUpRoot} from 'src/navigation/navigationStructures';
 
 import realm from 'src/models';
 
@@ -26,7 +26,7 @@ Navigation.events().registerAppLaunchedListener(async () => {
   RegisterScreens();
 
   //the user didnt opened the app throught deepl link
-  Navigation.setRoot(!isLoggedIn() ? loginRoot : mainRoot);
+  Navigation.setRoot(!isLoggedIn() ? signUpRoot : mainRoot);
 });
 
 /*

@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import {Text, StyleSheet, View, TouchableOpacity} from 'react-native';
 import {useSelector, connect} from 'react-redux';
-import {COLORS, SCREEN_PADDING} from 'src/theme';
+import {COLORS, SCREEN_PADDING, REGEX} from 'src/theme';
 import {Navigation} from 'react-native-navigation';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 
@@ -12,19 +12,19 @@ import {login, loginViewChangeValue} from './actions';
 
 const LoginView = (props: any) => {
   // get the reducers
-  const {loading, data, username, password} = useSelector(
+  const {loading, data, email, password} = useSelector(
     ({loginReducer}) => loginReducer,
   );
 
   useEffect(() => {
     props.loginViewChangeValue({
-      username: '',
+      email: '',
       password: '',
     });
 
     return () => {
       props.loginViewChangeValue({
-        username: '',
+        email: '',
         password: '',
       });
     };
@@ -35,11 +35,13 @@ const LoginView = (props: any) => {
       <View style={styles.container}>
         <View style={styles.inputContainer}>
           <InputText
-            placeholder="Username"
-            value={username}
+            placeholder="Email"
+            value={email}
+            regex={REGEX.EMAIL.regex}
+            notValidText={REGEX.EMAIL.valFailureMsg}
             onChangeText={(text: any) =>
               props.loginViewChangeValue({
-                username: text,
+                email: text,
               })
             }
           />
@@ -48,6 +50,9 @@ const LoginView = (props: any) => {
           <InputText
             placeholder="Password"
             value={password}
+            regex={REGEX.PASSWORD.regex}
+            secureTextEntry={true}
+            notValidText={REGEX.PASSWORD.valFailureMsg}
             onChangeText={(text: any) =>
               props.loginViewChangeValue({
                 password: text,
@@ -58,7 +63,7 @@ const LoginView = (props: any) => {
         <View style={styles.buttonContainer}>
           <Button
             text="Login"
-            onPress={() => props.login(username, password)}
+            onPress={() => props.login(email, password)}
             disabled={loading}
             loading={loading}
           />

@@ -25,6 +25,26 @@ export const loginRoot = {
   },
 };
 
+export const signUpRoot = {
+  root: {
+    stack: {
+      id: 'SIGN_UP_STACK',
+      children: [
+        {
+          component: {
+            name: 'SignUpView',
+            options: {
+              topBar: {
+                visible: false,
+              },
+            },
+          },
+        },
+      ],
+    },
+  },
+};
+
 const HOME_STACK = {
   stack: {
     children: [

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   View,
   TextInput,
@@ -11,10 +11,21 @@ import {
 
 const InputText = (props: any) => {
   const [value, setValue] = useState('' || props.defaultValue);
+  const [isValid, setIsValid] = useState(true);
 
   const handleChange = (text: any) => {
     setValue(text);
     if (props.onChangeText) props.onChangeText(text);
+
+    if (props.regex) {
+      if (text.match(props.regex)) {
+        setIsValid(true);
+      } else if (text == '') {
+        setIsValid(true);
+      } else {
+        setIsValid(false);
+      }
+    }
   };
 
   const handleOnEndEditing = (text: any) => {
@@ -23,37 +34,46 @@ const InputText = (props: any) => {
   };
 
   return (
-    <View style={[styles.mainOuterContainer, props.mainOuterContainer]}>
-      <TextInput
-        ref={props.forwardRef}
-        style={[styles.input, props.inputStyle]}
-        placeholderTextColor={props.placeholderTextColor}
-        onChangeText={handleChange}
-        value={props.value}
-        placeholder={props.placeholder}
-        defaultValue={props.defaultValue}
-        autoCorrect={false}
-        autoComplete={'off'}
-        autoCapitalize={'none'}
-        secureTextEntry={props.secureTextEntry}
-        underlineColorAndroid="transparent"
-        keyboardType={props.keyboardType}
-        returnKeyType={props.returnKeyType}
-        onSubmitEditing={props.onSubmitEditing}
-        onFocus={props.onFocus}
-        onBlur={props.onBlur}
-        onEndEditing={handleOnEndEditing}
-        editable={props.editable}
-        multiline={props.multiline}
-        numberOfLines={props.numberOfLines}
-      />
-      {props.icon ? (
-        <TouchableOpacity
-          disabled={props.iconDisabled}
-          onPress={props.onIconPress}>
-          <Image source={props.icon} style={styles.image} />
-        </TouchableOpacity>
-      ) : null}
+    <View>
+      <View
+        style={[
+          styles.mainOuterContainer,
+          props.mainOuterContainer,
+          {borderColor: isValid ? 'black' : 'red'},
+        ]}>
+        <TextInput
+          ref={props.forwardRef}
+          style={[styles.input, props.inputStyle]}
+          placeholderTextColor={props.placeholderTextColor}
+          onChangeText={handleChange}
+          value={props.value}
+          placeholder={props.placeholder}
+          defaultValue={props.defaultValue}
+          autoCorrect={false}
+          autoComplete={'off'}
+          autoCapitalize={'none'}
+          secureTextEntry={props.secureTextEntry}
+          underlineColorAndroid="transparent"
+          keyboardType={props.keyboardType}
+          returnKeyType={props.returnKeyType}
+          onSubmitEditing={props.onSubmitEditing}
+          onFocus={props.onFocus}
+          onBlur={props.onBlur}
+          onEndEditing={handleOnEndEditing}
+          editable={props.editable}
+          multiline={props.multiline}
+          numberOfLines={props.numberOfLines}
+        />
+
+        {props.icon ? (
+          <TouchableOpacity
+            disabled={props.iconDisabled}
+            onPress={props.onIconPress}>
+            <Image source={props.icon} style={styles.image} />
+          </TouchableOpacity>
+        ) : null}
+      </View>
+      {!isValid ? <Text style={styles.notValid}>{props.notValidText}</Text> : null}
     </View>
   );
 };
@@ -66,7 +86,6 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     borderWidth: 2,
     borderRadius: 20,
-    borderColor: 'black',
     paddingLeft: 25,
     paddingRight: 8,
   },
@@ -81,6 +100,11 @@ const styles = StyleSheet.create({
     height: 33,
     width: 33,
   },
+  notValid: {
+      color: 'red',
+      fontSize: 12,
+      paddingTop: 5
+  }
 });
 
 export default InputText;
