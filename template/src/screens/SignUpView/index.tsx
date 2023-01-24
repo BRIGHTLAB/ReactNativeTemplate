@@ -1,25 +1,38 @@
 import React, {useEffect} from 'react';
-import {
-  StyleSheet,
-  View
-} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import {useSelector, connect} from 'react-redux';
 import {COLORS, SCREEN_PADDING, REGEX} from 'src/theme';
 import {Navigation} from 'react-native-navigation';
-import { InputText, Button } from 'src/sharedComponents';
+import {InputText, Button} from 'src/sharedComponents';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 
 // action
-import {
-  SignUpViewChangeValue,
-  signUp
-} from './actions';
+import {SignUpViewChangeValue, signUp} from './actions';
 
 const SignUpView = props => {
   // get the reducers
-  const {loading, data, firstName, lastName, email, phone_number, password} = useSelector(
-    ({signUpViewReducer}) => signUpViewReducer,
-  );
+  const {loading, data, firstName, lastName, email, phone_number, password} =
+    useSelector(({signUpViewReducer}) => signUpViewReducer);
+
+  useEffect(() => {
+    props.SignUpViewChangeValue({
+      firstName: '',
+      lastName: '',
+      email: '',
+      phone_number: '',
+      password: '',
+    });
+
+    return () => {
+      props.SignUpViewChangeValue({
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone_number: '',
+        password: '',
+      });
+    };
+  }, []);
 
   return (
     <KeyboardAwareScrollView contentContainerStyle={styles.root}>
@@ -93,7 +106,9 @@ const SignUpView = props => {
         <View style={styles.buttonContainer}>
           <Button
             text="Sign Up"
-            onPress={() => props.signUp(firstName, lastName, email, password, phone_number)}
+            onPress={() =>
+              props.signUp(firstName, lastName, email, password, phone_number)
+            }
             disabled={loading}
             loading={loading}
           />
@@ -125,5 +140,5 @@ const styles = StyleSheet.create({
 
 export default connect(null, {
   SignUpViewChangeValue,
-  signUp
+  signUp,
 })(SignUpView);
