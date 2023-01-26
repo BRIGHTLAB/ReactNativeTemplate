@@ -128,6 +128,18 @@ fs.mkdir(`src/screens/${myParameter}`, (error) => {
       );
     }
 
+    while (modifiedIndexContent.includes('TemplateFolderState')) {
+      modifiedIndexContent = modifiedIndexContent.replace(
+        'TemplateFolderState',
+        `${myParameter}State`,
+      );
+      fs.writeFileSync(
+        `src/screens/${myParameter}/index.tsx`,
+        modifiedIndexContent,
+        'utf-8',
+      );
+    }
+
     // ======================================== //
     // Modify Screen index.tsx
     const indexScreenContent = fs.readFileSync(
