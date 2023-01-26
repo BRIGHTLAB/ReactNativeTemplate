@@ -4,7 +4,7 @@ import store from 'src/store';
 
 // Add a request interceptor
 axios.interceptors.request.use(
-  async config => {
+  async (config: any) => {
     config.baseURL = 'https://api.domain.com';
 
     // adding the token if the user exists in the local database

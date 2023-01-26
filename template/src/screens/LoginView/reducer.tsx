@@ -2,14 +2,19 @@ import {
   LOGIN_DATA_UPDATE
 } from './types';
 
-const INITAL_STATE = {
+export interface State {
+  loading: boolean;
+  email: string;
+  password: string;
+}
+
+const INITAL_STATE: State = {
   loading: false,
-  data: [],
   email: '',
   password: ''
 };
 
-export default (state = INITAL_STATE, action) => {
+export default (state = INITAL_STATE, action: any) => {
   switch (action.type) {
     case LOGIN_DATA_UPDATE:
       return {

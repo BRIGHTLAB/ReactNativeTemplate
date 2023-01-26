@@ -1,10 +1,12 @@
 import {
   TEMPLATE_DATA_UPDATE
 } from './types';
+export interface State {
+  loading: boolean;
+}
 
-const INITAL_STATE = {
-  loading: false,
-  data: []
+const INITAL_STATE : State = {
+  loading: false
 };
 
 export default (state = INITAL_STATE, action: any) => {

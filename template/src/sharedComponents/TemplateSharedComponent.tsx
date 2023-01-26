@@ -2,7 +2,11 @@ import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import {COLORS} from 'src/theme';
 
-const TemplateSharedComponent = (props: any) => {
+interface templateProps {
+
+}
+
+const TemplateSharedComponent = (props: templateProps) => {
     return (
         <View>
             <Text>Template Shared Component</Text>

@@ -2,9 +2,17 @@ import {
   SIGNUPVIEW_DATA_UPDATE
 } from './types';
 
-const INITAL_STATE = {
+export interface State {
+  loading: boolean;
+  firstName: string;
+  lastName: string;
+  password: string;
+  email: string;
+  phone_number: string;
+}
+
+const INITAL_STATE : State = {
   loading: false,
-  data: [],
   firstName: '',
   lastName: '',
   password: '',

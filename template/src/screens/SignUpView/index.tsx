@@ -5,14 +5,19 @@ import {COLORS, SCREEN_PADDING, REGEX} from 'src/theme';
 import {Navigation} from 'react-native-navigation';
 import {InputText, Button} from 'src/sharedComponents';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
+import {State as SignUpViewState} from './reducer';
 
 // action
 import {SignUpViewChangeValue, signUp} from './actions';
 
-const SignUpView = props => {
+const SignUpView = (props: any) => {
+  interface State {
+    signUpViewReducer: SignUpViewState;
+  }
+
   // get the reducers
-  const {loading, data, firstName, lastName, email, phone_number, password} =
-    useSelector(({signUpViewReducer}) => signUpViewReducer);
+  const {loading, firstName, lastName, email, phone_number, password} =
+    useSelector(({signUpViewReducer}: State) => signUpViewReducer);
 
   useEffect(() => {
     props.SignUpViewChangeValue({

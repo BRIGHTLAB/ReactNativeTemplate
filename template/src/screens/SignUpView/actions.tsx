@@ -7,8 +7,8 @@ import realm from 'src/models';
 import {Navigation} from 'react-native-navigation';
 import {loginRoot} from 'src/navigation/navigationStructures';
 
-export const SignUpViewChangeValue = object => {
-  return async dispatch => {
+export const SignUpViewChangeValue = (object: any) => {
+  return async (dispatch: any) => {
     dispatch({
       type: SIGNUPVIEW_DATA_UPDATE,
       payload: object,
@@ -17,7 +17,7 @@ export const SignUpViewChangeValue = object => {
 };
 
 export const signUp = (firstName: string, lastName:string, email: string, password: string, phone_number: string) => {
-  return async dispatch => {
+  return async (dispatch: any) => {
       try{
 
         dispatch({

@@ -8,7 +8,19 @@ import {
   ActivityIndicator,
 } from 'react-native';
 
-const Button = (props: any) => {
+interface ButtonProps {
+  text: string;
+  onPress: () => void;
+  disabled?: boolean;
+  loading?: boolean;
+  image?: boolean;
+  imageChild?: JSX.Element;
+  buttonContainerStyle?: object;
+  imageContainerStyle?: object;
+  textStyle?: object;
+}
+
+const Button = (props: ButtonProps) => {
   return (
     <TouchableOpacity
       style={[

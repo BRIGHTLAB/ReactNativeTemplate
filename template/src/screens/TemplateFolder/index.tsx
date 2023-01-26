@@ -1,24 +1,20 @@
 import React, {useEffect} from 'react';
-import {
-  Text,
-  StyleSheet,
-  SafeAreaView,
-  TouchableOpacity
-} from 'react-native';
+import {Text, StyleSheet, SafeAreaView, TouchableOpacity} from 'react-native';
 import {useSelector, connect} from 'react-redux';
 import {COLORS, SCREEN_PADDING} from 'src/theme';
 import {Navigation} from 'react-native-navigation';
+import {State as TemplateFolderState} from './reducer';
 
 // action
-import {
-  templateViewChangeValue
-} from './actions';
+import {templateViewChangeValue} from './actions';
 
-const TemplateFolder = props => {
+const TemplateFolder = (props: any) => {
+  interface State {
+    templateReducer: TemplateFolderState;
+  }
+
   // get the reducers
-  const {loading, data} = useSelector(
-    ({templateReducer}) => templateReducer,
-  );
+  const {loading} = useSelector(({templateReducer}: State) => templateReducer);
 
   return (
     <SafeAreaView style={styles.root}>
@@ -35,9 +31,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     paddingTop: 20,
   },
-
 });
 
 export default connect(null, {
-  templateViewChangeValue
+  templateViewChangeValue,
 })(TemplateFolder);

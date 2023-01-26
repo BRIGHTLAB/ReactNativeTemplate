@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import {
   View,
   TextInput,
@@ -6,10 +6,40 @@ import {
   StyleSheet,
   TouchableOpacity,
   Text,
-  Platform,
+  KeyboardTypeOptions,
+  ReturnKeyTypeOptions
 } from 'react-native';
 
-const InputText = (props: any) => {
+interface InputTextProps {
+  defaultValue?: string;
+  onChangeText?: (text: any) => void;
+  regex?: RegExp;
+  mainOuterContainer?: object;
+  inputStyle?: object;
+  placeholderTextColor?: string;
+  value?: string;
+  placeholder?: string;
+  autoCorrect?: boolean;
+  autoComplete?: string;
+  autoCapitalize?: string;
+  secureTextEntry?: boolean;
+  keyboardType?: KeyboardTypeOptions
+  returnKeyType?: ReturnKeyTypeOptions;
+  onSubmitEditing?: (event: any) => void;
+  onFocus?: (event: any) => void;
+  onBlur?: (event: any) => void;
+  onEndEditing?: (text: any) => void;
+  editable?: boolean;
+  multiline?: boolean;
+  numberOfLines?: number;
+  icon?: any;
+  iconDisabled?: boolean;
+  onIconPress?: () => void;
+  notValidText?: string;
+  forwardRef?: any;
+}
+
+const InputText = (props: InputTextProps) => {
   const [value, setValue] = useState('' || props.defaultValue);
   const [isValid, setIsValid] = useState(true);
 
@@ -73,7 +103,9 @@ const InputText = (props: any) => {
           </TouchableOpacity>
         ) : null}
       </View>
-      {!isValid ? <Text style={styles.notValid}>{props.notValidText}</Text> : null}
+      {!isValid ? (
+        <Text style={styles.notValid}>{props.notValidText}</Text>
+      ) : null}
     </View>
   );
 };
@@ -101,10 +133,10 @@ const styles = StyleSheet.create({
     width: 33,
   },
   notValid: {
-      color: 'red',
-      fontSize: 12,
-      paddingTop: 5
-  }
+    color: 'red',
+    fontSize: 12,
+    paddingTop: 5,
+  },
 });
 
 export default InputText;

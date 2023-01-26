@@ -4,6 +4,7 @@ import {useSelector, connect} from 'react-redux';
 import {COLORS, SCREEN_PADDING, REGEX} from 'src/theme';
 import {Navigation} from 'react-native-navigation';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
+import {State as LoginViewState} from './reducer';
 
 import {InputText, Button} from 'src/sharedComponents';
 
@@ -11,9 +12,13 @@ import {InputText, Button} from 'src/sharedComponents';
 import {login, loginViewChangeValue} from './actions';
 
 const LoginView = (props: any) => {
+  interface State {
+    loginReducer: LoginViewState;
+  }
+
   // get the reducers
-  const {loading, data, email, password} = useSelector(
-    ({loginReducer}) => loginReducer,
+  const {loading, email, password} = useSelector(
+    ({loginReducer}: State) => loginReducer,
   );
 
   useEffect(() => {
