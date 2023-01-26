@@ -2,7 +2,12 @@ import {
   HOME_STATUS_CHANGE
 } from './types';
 
-const INITAL_STATE = {
+export interface State {
+  loading: boolean;
+  data: any[];
+} 
+
+const INITAL_STATE: State = {
   loading: false,
   data: []
 };

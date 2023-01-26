@@ -13,7 +13,7 @@ import {
 interface InputTextProps {
   defaultValue?: string;
   onChangeText?: (text: any) => void;
-  regex?: RegExp;
+  regex?: RegExp | string | undefined;
   mainOuterContainer?: object;
   inputStyle?: object;
   placeholderTextColor?: string;
