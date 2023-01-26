@@ -12,7 +12,7 @@ axios.interceptors.request.use(
     // const language = realm.objectForPrimaryKey('Settings', 'language');
     //
     if (user.length > 0) {
-      config.headers['Authorization'] = 'Bearer ' + user[0].token;
+      // config.headers['Authorization'] = 'Bearer ' + user[0].token;
       //   config.headers['x-locale'] = language.value || 'en';
     }
     return config;
@@ -45,23 +45,23 @@ axios.interceptors.response.use(
       console.log('trying to refresh token');
 
       const user = realm.objects('User');
-      if (user.length > 0) {
-        return axios
-          .post('/v1/refresh_token', null, {
-            headers: {
-              Authorization: `Bearer ${user[0].refresh_token}`,
-            },
-          })
-          .then(response => {
-            realm.write(() => {
-              let user = realm.objects('User')[0];
-              user.token = response.data.token;
-              user.refreshToken = response.data.refresh_token;
-            });
-            console.log('continue, request', originalRequest.url);
-            return axios(originalRequest);
-          });
-      }
+      // if (user.length > 0) {
+      //   return axios
+      //     .post('/v1/refresh_token', null, {
+      //       headers: {
+      //         Authorization: `Bearer ${user[0].refresh_token}`,
+      //       },
+      //     })
+      //     .then(response => {
+      //       realm.write(() => {
+      //         let user = realm.objects('User')[0];
+      //         user.token = response.data.token;
+      //         user.refreshToken = response.data.refresh_token;
+      //       });
+      //       console.log('continue, request', originalRequest.url);
+      //       return axios(originalRequest);
+      //     });
+      // }
     }
 
     return Promise.reject(error);

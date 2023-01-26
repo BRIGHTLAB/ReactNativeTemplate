@@ -1,10 +1,12 @@
+export{};
+
 const fs = require('fs-extra');
 
 // Get the parameter passed from the script in the terminal
 const myParameter = process.argv[2];
 
 // Create a the page folder in src/screens
-fs.mkdir(`src/screens/${myParameter}`, error => {
+fs.mkdir(`src/screens/${myParameter}`, (error: any) => {
   if (error) {
     console.error(`Error creating folder: ${error}`);
   } else {
@@ -139,7 +141,7 @@ fs.mkdir(`src/screens/${myParameter}`, error => {
     const lines = indexScreenContent.split('\n');
 
     // Find the index of the first line that is not an import statement
-    const lineIndex = lines.findIndex(line => !line.startsWith('export'));
+    const lineIndex = lines.findIndex((line: any) => !line.startsWith('export'));
 
     // Insert the new string at the desired line
     lines.splice(
@@ -162,7 +164,7 @@ fs.mkdir(`src/screens/${myParameter}`, error => {
 
     // Find the index of the first line that is not an import statement
     const importLineIndex = importLines.findIndex(
-      line => !line.startsWith('import'),
+      (line: any) => !line.startsWith('import'),
     );
 
     // Insert the new string at the desired line
@@ -186,12 +188,12 @@ fs.mkdir(`src/screens/${myParameter}`, error => {
     const storeStatement = `${lowerCaseWord}Reducer: ${myParameter}Reducer,`
     const storeReducerLines = storeContent.split('\n');
     
-    const functionStoreIndex = storeReducerLines.findIndex(line =>
+    const functionStoreIndex = storeReducerLines.findIndex((line: any) =>
         line.startsWith('const Reducers = combineReducers({'),
       );
     
       const logStoreIndex = storeReducerLines.findIndex(
-        (line, index) =>
+        (line: any, index: any) =>
           index > functionStoreIndex &&
           line.startsWith('});'),
       );
@@ -241,12 +243,12 @@ fs.mkdir(`src/screens/${myParameter}`, error => {
 
     const navRegisterLines = navigationRegisterContent.split('\n');
 
-    const functionIndex = navRegisterLines.findIndex(line =>
+    const functionIndex = navRegisterLines.findIndex((line: any) =>
       line.startsWith('export default function'),
     );
 
     const logIndex = navRegisterLines.findIndex(
-      (line, index) =>
+      (line: any, index: any) =>
         index > functionIndex &&
         line.startsWith("console.info('All screens have been registered...')"),
     );
