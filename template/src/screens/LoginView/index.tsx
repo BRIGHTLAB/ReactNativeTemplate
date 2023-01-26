@@ -65,6 +65,25 @@ const LoginView = (props: any) => {
             }
           />
         </View>
+        <TouchableOpacity
+          style={styles.captionContainer}
+          onPress={() => {
+            Navigation.push(props.componentId, {
+              component: {
+                name: 'ForgotPasswordView',
+                options: {
+                  topBar: {
+                    visible: false,
+                    backButton: {
+                      visible: true,
+                    },
+                  },
+                },
+              },
+            });
+          }}>
+          <Text style={styles.caption}>Forgot password?</Text>
+        </TouchableOpacity>
         <View style={styles.buttonContainer}>
           <Button
             text="Login"
@@ -95,6 +114,14 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     width: '100%',
+  },
+  captionContainer: {
+    paddingBottom: 15,
+    alignSelf: 'flex-end',
+  },
+  caption: {
+    fontSize: 12,
+    textDecorationLine: 'underline',
   },
 });
 

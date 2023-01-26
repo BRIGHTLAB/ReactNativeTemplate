@@ -5,6 +5,7 @@ import store from '../store';
 
 // import from here
 import {
+ ForgotPasswordView,
  StartView,
  SignUpView,
   HomeView,
@@ -28,6 +29,7 @@ export default function () {
   Navigation.registerComponent('Home', () => WrappedComponent(HomeView));
 Navigation.registerComponent('SignUpView', () => WrappedComponent(SignUpView));
 Navigation.registerComponent('StartView', () => WrappedComponent(StartView));
+Navigation.registerComponent('ForgotPasswordView', () => WrappedComponent(ForgotPasswordView));
   
   console.info('All screens have been registered...');
 }
