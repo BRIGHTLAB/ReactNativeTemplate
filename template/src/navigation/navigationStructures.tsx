@@ -45,6 +45,26 @@ export const signUpRoot = {
   },
 };
 
+export const StartRoot = {
+  root: {
+    stack: {
+      id: 'START_ROOT',
+      children: [
+        {
+          component: {
+            name: 'StartView',
+            options: {
+              topBar: {
+                visible: false,
+              },
+            },
+          },
+        },
+      ],
+    },
+  },
+};
+
 const HOME_STACK = {
   stack: {
     children: [

@@ -1,6 +1,7 @@
 import {applyMiddleware, combineReducers, createStore} from 'redux';
 import thunk from 'redux-thunk';
 import SignUpViewReducer from 'src/screens/SignUpView/reducer';
+import StartViewReducer from 'src/screens/StartView/reducer';
 
 import HomeReducer from 'src/screens/HomeView/reducer';
 import LoginReducer from 'src/screens/LoginView/reducer';
@@ -13,6 +14,7 @@ const Reducers = combineReducers({
   loginReducer: LoginReducer,
   templateReducer: TemplateReducer,
 signUpViewReducer: SignUpViewReducer,
+startViewReducer: StartViewReducer,
 });
 
 const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
