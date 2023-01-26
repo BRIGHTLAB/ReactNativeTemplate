@@ -6,8 +6,8 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
-    "screen": "node src/cli/CreateScreenFolder.tsx",
-    "cmp": "node src/cli/CreateSharedComponent.tsx",
+    "screen": "node src/cli/CreateScreenFolder.js",
+    "cmp": "node src/cli/CreateSharedComponent.js",
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },

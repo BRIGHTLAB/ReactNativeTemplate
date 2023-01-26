@@ -1,5 +1,3 @@
-export {};
-
 const fs = require('fs-extra');
 
 // Get the parameter passed from the script in the terminal
@@ -8,7 +6,7 @@ const myParameter = process.argv[2];
 fs.copyFile(
   'src/sharedComponents/TemplateSharedComponent.tsx',
   `src/sharedComponents/${myParameter}.tsx`,
-  (err: any) => {
+  (err) => {
     if (err) throw err;
 
     // Modify shared component function naming
@@ -43,7 +41,7 @@ fs.copyFile(
     const lines = indexContent.split('\n');
 
     // Find the index of the first line that is not an import statement
-    const lineIndex = lines.findIndex((line: any) => !line.startsWith('export'));
+    const lineIndex = lines.findIndex((line) => !line.startsWith('export'));
 
     // Insert the new string at the desired line
     lines.splice(
