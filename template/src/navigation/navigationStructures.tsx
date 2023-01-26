@@ -72,7 +72,7 @@ const HOME_STACK = {
         id: 'HOME-SCREEN',
         component: {
           id: 'HOME_SCREEN',
-          name: 'SettingListView',
+          name: 'Home',
           options: {
             topBar: {
               visible: true,

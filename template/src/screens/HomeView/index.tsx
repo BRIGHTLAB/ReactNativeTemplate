@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {Text, StyleSheet, SafeAreaView, Linking} from 'react-native';
+import {Text, StyleSheet, SafeAreaView, Linking, View, TouchableOpacity} from 'react-native';
 import {useSelector, connect} from 'react-redux';
 import {COLORS, SCREEN_PADDING} from 'src/theme';
 import {Navigation} from 'react-native-navigation';
@@ -129,9 +129,26 @@ const HomeView = (props: any) => {
   }, []);
 
   return (
-    <SafeAreaView style={styles.root}>
+    <View style={styles.root}>
       <Text>{I18n.t("hello")}</Text>
-    </SafeAreaView>
+      <TouchableOpacity onPress={() => {
+        Navigation.push(props.componentId, {
+          component: {
+            name: 'SettingListView',
+            options: {
+              topBar: {
+                visible: false,
+                backButton: {
+                  visible: true,
+                },
+              },
+            },
+          },
+        });
+      }}>
+        <Text>Click to go to Settings</Text>
+      </TouchableOpacity>
+    </View>
   );
 };
 
