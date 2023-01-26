@@ -31,11 +31,25 @@ fs.copyFile(
       );
     }
 
+    while (modifiedContent.includes('templateProps')) {
+      modifiedContent = modifiedContent.replace(
+        'templateProps',
+        `${myParameter}Props`,
+      );
+      fs.writeFileSync(
+        `src/sharedComponents/${myParameter}.tsx`,
+        modifiedContent,
+        'utf-8',
+      );
+    }
+    
+
     // Modify Shared Component index.tsx
     const indexContent = fs.readFileSync(
       `src/sharedComponents/index.tsx`,
       'utf-8',
     );
+
 
     // Split the contents of the file into an array of lines
     const lines = indexContent.split('\n');
