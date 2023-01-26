@@ -386,6 +386,8 @@ PODS:
     - React-RCTText
   - RealmJS (11.3.1):
     - React
+  - RNDeviceInfo (10.3.0):
+    - React-Core
   - RNLocalize (2.2.4):
     - React-Core
   - SocketRocket (0.6.0)
@@ -456,6 +458,7 @@ DEPENDENCIES:
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - ReactNativeNavigation (from `../node_modules/react-native-navigation`)
   - RealmJS (from `../node_modules/realm`)
+  - RNDeviceInfo (from `../node_modules/react-native-device-info`)
   - RNLocalize (from `../node_modules/react-native-localize`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
@@ -553,6 +556,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-navigation"
   RealmJS:
     :path: "../node_modules/realm"
+  RNDeviceInfo:
+    :path: "../node_modules/react-native-device-info"
   RNLocalize:
     :path: "../node_modules/react-native-localize"
   Yoga:
@@ -610,6 +615,7 @@ SPEC CHECKSUMS:
   ReactCommon: 349be31adeecffc7986a0de875d7fb0dcf4e251c
   ReactNativeNavigation: 44df9a6347dc583deac3a09b171e2e1b4905a9d6
   RealmJS: 43fc7bfb83229c8a2755cb34f71f769c97b7b581
+  RNDeviceInfo: 4701f0bf2a06b34654745053db0ce4cb0c53ada7
   RNLocalize: 0df7970cfc60389f00eb62fd7c097dc75af3fb4f
   SocketRocket: fccef3f9c5cedea1353a9ef6ada904fde10d6608
   Yoga: 99caf8d5ab45e9d637ee6e0174ec16fbbb01bcfc

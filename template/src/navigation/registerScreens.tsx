@@ -5,15 +5,16 @@ import store from '../store';
 
 // import from here
 import {
- ForgotPasswordView,
- StartView,
- SignUpView,
+  SettingListView,
+  ForgotPasswordView,
+  StartView,
+  SignUpView,
   HomeView,
-  LoginView
+  LoginView,
 } from 'src/screens';
 
-function WrappedComponent(Component) {
-  return function inject(props) {
+function WrappedComponent(Component: any) {
+  return function inject(props: any) {
     const EnhancedComponent = () => (
       <Provider store={store}>
         <Component {...props} />
@@ -27,9 +28,16 @@ export default function () {
   // add all screens below
   Navigation.registerComponent('Login', () => WrappedComponent(LoginView));
   Navigation.registerComponent('Home', () => WrappedComponent(HomeView));
-Navigation.registerComponent('SignUpView', () => WrappedComponent(SignUpView));
-Navigation.registerComponent('StartView', () => WrappedComponent(StartView));
-Navigation.registerComponent('ForgotPasswordView', () => WrappedComponent(ForgotPasswordView));
-  
+  Navigation.registerComponent('SignUpView', () =>
+    WrappedComponent(SignUpView),
+  );
+  Navigation.registerComponent('StartView', () => WrappedComponent(StartView));
+  Navigation.registerComponent('ForgotPasswordView', () =>
+    WrappedComponent(ForgotPasswordView),
+  );
+  Navigation.registerComponent('SettingListView', () =>
+    WrappedComponent(SettingListView),
+  );
+
   console.info('All screens have been registered...');
 }

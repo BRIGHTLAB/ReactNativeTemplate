@@ -3,6 +3,7 @@ import thunk from 'redux-thunk';
 import SignUpViewReducer from 'src/screens/SignUpView/reducer';
 import StartViewReducer from 'src/screens/StartView/reducer';
 import ForgotPasswordViewReducer from 'src/screens/ForgotPasswordView/reducer';
+import SettingListViewReducer from 'src/screens/SettingListView/reducer';
 
 import HomeReducer from 'src/screens/HomeView/reducer';
 import LoginReducer from 'src/screens/LoginView/reducer';
@@ -17,6 +18,7 @@ const Reducers = combineReducers({
 signUpViewReducer: SignUpViewReducer,
 startViewReducer: StartViewReducer,
 forgotPasswordViewReducer: ForgotPasswordViewReducer,
+settingListViewReducer: SettingListViewReducer,
 });
 
 const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
