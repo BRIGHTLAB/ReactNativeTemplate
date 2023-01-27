@@ -10,17 +10,16 @@ import HomeReducer from 'src/screens/HomeView/reducer';
 import LoginReducer from 'src/screens/LoginView/reducer';
 import TemplateReducer from 'src/screens/TemplateFolder/reducer';
 
-
 const Reducers = combineReducers({
   // write all the reduceres here
   homeReducer: HomeReducer,
   loginReducer: LoginReducer,
   templateReducer: TemplateReducer,
-signUpViewReducer: SignUpViewReducer,
-startViewReducer: StartViewReducer,
-forgotPasswordViewReducer: ForgotPasswordViewReducer,
-settingListViewReducer: SettingListViewReducer,
-otpViewReducer: OtpViewReducer,
+  signUpViewReducer: SignUpViewReducer,
+  startViewReducer: StartViewReducer,
+  forgotPasswordViewReducer: ForgotPasswordViewReducer,
+  settingListViewReducer: SettingListViewReducer,
+  otpViewReducer: OtpViewReducer,
 });
 
 const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
