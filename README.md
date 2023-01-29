@@ -11,7 +11,7 @@ npx react-native init NameOfTheApp --template https://github.com/BRIGHTLAB/React
 ```
 
 Packages that are used in the template:
-- @twotalltotems/react-native-otp-input, [link](https://github.com/tttstudios/react-native-otp-input/issues)
+- @twotalltotems/react-native-otp-input, [link](https://github.com/tttstudios/react-native-otp-input)
 - dayjs, [link](https://day.js.org/)
 - fs-extra, [link](https://github.com/jprichardson/node-fs-extra)
 - i18n-js, [link](https://www.npmjs.com/package/i18n-js/v/latest), please use version 3.5.0
