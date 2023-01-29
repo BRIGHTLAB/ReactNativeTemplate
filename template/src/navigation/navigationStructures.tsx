@@ -98,8 +98,103 @@ const HOME_STACK = {
   },
 };
 
+export const HOME_PAGE_STACK = {
+    stack: {
+      id: 'HOME_PAGE_STACK',
+      children: [
+        {
+          component: {
+            name: 'Home',
+            options: {
+              topBar: {
+                visible: true,
+                title: {
+                  text: 'Home',
+                  alignment: 'center',
+                  color: 'black',
+                  // fontFamily: 'Inter-SemiBold',
+                  fontSize: 20,
+                },
+                background: {
+                  color: 'white',
+                },
+              },
+              bottomTab: {
+                // icon: IMAGES.bills,
+                iconColor: 'grey',
+                text: 'Home',
+                textColor: 'black',
+                fontSize: 12,
+                selectedTextColor: 'black', 
+              },
+              animations: {
+                push: {
+                  enabled: false,
+                },
+              },
+            },
+          },
+        },
+      ],
+    },
+  }
+
+  export const SETTINGS_PAGE_STACK = {
+    stack: {
+      id: 'HOME_PAGE_STACK',
+      children: [
+        {
+          component: {
+            name: 'SettingListView',
+            options: {
+              topBar: {
+                visible: true,
+                title: {
+                  text: 'Settings',
+                  alignment: 'center',
+                  color: 'black',
+                  // fontFamily: 'Inter-SemiBold',
+                  fontSize: 20,
+                },
+                background: {
+                  color: 'white',
+                },
+              },
+              bottomTab: {
+                // icon: IMAGES.bills,
+                iconColor: 'grey',
+                text: 'Settings',
+                textColor: 'black',
+                fontSize: 12,
+                selectedTextColor: 'black', 
+              },
+              animations: {
+                push: {
+                  enabled: false,
+                },
+              },
+            },
+          },
+        },
+      ],
+    },
+  }
+
 export const mainRoot = {
   root: {
-    ...HOME_STACK
+    bottomTabs: {
+      id: 'BOTTOM_STACK',
+      children: [
+        HOME_PAGE_STACK,
+        SETTINGS_PAGE_STACK,
+      ],
+      options: {
+        bottomTabs: {
+          backgroundColor: 'white',
+          animate: false,
+          titleDisplayMode: 'alwaysShow',
+        },
+      },
+    },
   },
 };
