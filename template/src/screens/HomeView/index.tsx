@@ -131,23 +131,6 @@ const HomeView = (props: any) => {
   return (
     <View style={styles.root}>
       <Text>{I18n.t("hello")}</Text>
-      <TouchableOpacity onPress={() => {
-        Navigation.push(props.componentId, {
-          component: {
-            name: 'SettingListView',
-            options: {
-              topBar: {
-                visible: false,
-                backButton: {
-                  visible: true,
-                },
-              },
-            },
-          },
-        });
-      }}>
-        <Text>Click to go to Settings</Text>
-      </TouchableOpacity>
     </View>
   );
 };
