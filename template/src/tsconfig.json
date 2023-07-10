@@ -8,8 +8,6 @@
         "src/*": ["*"],
         "src": ["node_modules/src"]
     },
-    "types": ["node"],
-    /* Completeness */
-    "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
+    "types": ["node"]
   }
 }
