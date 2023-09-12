@@ -3,7 +3,7 @@ import {Text, StyleSheet, SafeAreaView, Linking, View, TouchableOpacity} from 'r
 import {useSelector, connect} from 'react-redux';
 import {COLORS, SCREEN_PADDING} from 'src/theme';
 import {Navigation} from 'react-native-navigation';
-import I18n from 'src/I18n/i18n';
+import { useTranslation } from 'react-i18next';
 // import PushNotificationIOS from '@react-native-community/push-notification-ios';
 // import PushNotification from 'react-native-push-notification';
 
@@ -11,6 +11,7 @@ import {State as HomeViewState} from './reducer';
 
 // action
 import {loadData, registerPushToken, homeViewChangeValue} from './actions';
+import i18n from '../../translation';
 
 const HomeView = (props: any) => {
   interface State {
@@ -18,6 +19,8 @@ const HomeView = (props: any) => {
   }
   // get the reducers
   const {loading, data} = useSelector(({homeReducer}: State) => homeReducer);
+
+  const { t } = useTranslation()
 
   // Push Notification function
   // const notificationInit = () => {
@@ -130,7 +133,19 @@ const HomeView = (props: any) => {
 
   return (
     <View style={styles.root}>
-      <Text>{I18n.t("hello")}</Text>
+      <Text>{t("hello")}</Text>
+      {/* <Text>hello</Text> */}
+
+      <TouchableOpacity onPress={() => {
+        i18n.changeLanguage("ar")
+      }} >
+        <Text>Change to Ar</Text>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={() => {
+        i18n.changeLanguage("en")
+      }} >
+        <Text>Change to En</Text>
+      </TouchableOpacity>
     </View>
   );
 };

@@ -18,6 +18,8 @@ you can run the below code to install the below dependencies
 - react native picker
 - react native image picker
 - react native action sheet
+- I18n next
+- react native localization
 
 ```
 yarn add redux react-redux dayjs redux-thunk realm react-native-render-html react-native-push-notification react-native-webview react-native-video react-native-navigation @react-native-community/push-notification-ios @twotalltotems/react-native-otp-input @react-native-picker/picker axios lottie-react-native lottie-ios@3.1.8 react-native-action-sheet react-native-image-picker
