@@ -29,6 +29,10 @@ Packages that are used in the template:
 - @types/node
 - @types/i18n-js
 
+```
+yarn add realm
+```
+
 Once the following is done, Navigate to the iOS folder from your terminal by `cd ios/` and run `pod install`
 
 To Create a screen page, run the following command
