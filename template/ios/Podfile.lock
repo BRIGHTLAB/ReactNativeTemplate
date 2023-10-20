@@ -503,8 +503,6 @@ PODS:
     - React-CoreModules
     - React-RCTImage
     - React-RCTText
-  - RealmJS (12.2.1):
-    - React
   - RNCClipboard (1.5.1):
     - React-Core
   - RNDeviceInfo (10.9.0):
@@ -582,7 +580,6 @@ DEPENDENCIES:
   - React-utils (from `../node_modules/react-native/ReactCommon/react/utils`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - ReactNativeNavigation (from `../node_modules/react-native-navigation`)
-  - RealmJS (from `../node_modules/realm`)
   - "RNCClipboard (from `../node_modules/@react-native-community/clipboard`)"
   - RNDeviceInfo (from `../node_modules/react-native-device-info`)
   - RNLocalize (from `../node_modules/react-native-localize`)
@@ -690,8 +687,6 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon"
   ReactNativeNavigation:
     :path: "../node_modules/react-native-navigation"
-  RealmJS:
-    :path: "../node_modules/realm"
   RNCClipboard:
     :path: "../node_modules/@react-native-community/clipboard"
   RNDeviceInfo:
@@ -756,7 +751,6 @@ SPEC CHECKSUMS:
   React-utils: b79f2411931f9d3ea5781404dcbb2fa8a837e13a
   ReactCommon: 4b2bdcb50a3543e1c2b2849ad44533686610826d
   ReactNativeNavigation: 3bf96607854b1a278560a41d892cef773353953e
-  RealmJS: b36dae5c0def204602827884512252a320332c69
   RNCClipboard: 41d8d918092ae8e676f18adada19104fa3e68495
   RNDeviceInfo: 02ea8b23e2280fa18e00a06d7e62804d74028579
   RNLocalize: dbea38dcb344bf80ff18a1757b1becf11f70cae4
