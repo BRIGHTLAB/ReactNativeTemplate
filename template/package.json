@@ -9,6 +9,7 @@
     "start": "react-native start",
     "test": "jest",
     "screen": "node src/cli/CreateScreenFolder.js",
+    "list": "node src/cli/CreateListScreenFolder.js",
     "cmp": "node src/cli/CreateSharedComponent.js"
   },
   "dependencies": {

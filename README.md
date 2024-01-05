@@ -2,7 +2,7 @@
 
 Guidelines for using the react native template
 
-this reposetry will guide you to setup a new react native app from scratch.
+this repository will guide you to setup a new react native app from scratch.
 
 you can run the below code to install the template
 
@@ -39,6 +39,16 @@ To Create a screen page, run the following command
 
 ```
 yarn screen NameOfTheScreen
+
+```
+
+To Create a FlatList screen, run the following command
+
+```
+yarn run list NameOfTheScreen
+
+```
+
 ```
 
 To Create a shared component, run the following command

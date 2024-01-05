@@ -17,12 +17,12 @@ import {templateViewChangeValue} from './actions';
 
 const TemplateListFolder = (props: any) => {
   interface State {
-    templateReducer: TemplateFolderState;
+    templateListReducer: TemplateFolderState;
   }
 
   // get the reducers
   const {loading, data} = useSelector(
-    ({templateReducer}: State) => templateReducer,
+    ({templateListReducer}: State) => templateListReducer,
   );
 
   // Render Item
