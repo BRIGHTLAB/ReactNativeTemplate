@@ -9,7 +9,7 @@ fs.mkdir(`src/screens/${myParameter}`, (error) => {
     console.error(`Error creating folder: ${error}`);
   } else {
     // copy the files of the template folder
-    fs.copySync('src/screens/TemplateFolder', `src/screens/${myParameter}`);
+    fs.copySync('src/screens/TemplateFolder/TemplatePageFolder', `src/screens/${myParameter}`);
 
     // ======================================== //
     // Modify Types.tsx
