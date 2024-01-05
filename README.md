@@ -49,7 +49,6 @@ yarn run list NameOfTheScreen
 
 ```
 
-```
 
 To Create a shared component, run the following command
 
