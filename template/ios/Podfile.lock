@@ -378,7 +378,8 @@ PODS:
     - glog
   - react-native-render-html (6.3.4):
     - React-Core
-  - react-native-webview (13.6.0):
+  - react-native-webview (13.6.4):
+    - RCT-Folly (= 2021.07.22.00)
     - React-Core
   - React-NativeModulesApple (0.72.4):
     - hermes-engine
@@ -490,26 +491,24 @@ PODS:
     - React-jsi (= 0.72.4)
     - React-logger (= 0.72.4)
     - React-perflogger (= 0.72.4)
-  - ReactNativeNavigation (7.37.0-hotfix.1):
+  - ReactNativeNavigation (7.37.2):
     - HMSegmentedControl
     - React-Core
     - React-CoreModules
     - React-RCTImage
     - React-RCTText
-    - ReactNativeNavigation/Core (= 7.37.0-hotfix.1)
-  - ReactNativeNavigation/Core (7.37.0-hotfix.1):
+    - ReactNativeNavigation/Core (= 7.37.2)
+  - ReactNativeNavigation/Core (7.37.2):
     - HMSegmentedControl
     - React-Core
     - React-CoreModules
     - React-RCTImage
     - React-RCTText
-  - RealmJS (12.5.1):
-    - React
   - RNCClipboard (1.5.1):
     - React-Core
-  - RNDeviceInfo (10.9.0):
+  - RNDeviceInfo (10.12.0):
     - React-Core
-  - RNLocalize (3.0.2):
+  - RNLocalize (3.0.6):
     - React-Core
   - SocketRocket (0.6.1)
   - Yoga (1.14.0)
@@ -582,7 +581,6 @@ DEPENDENCIES:
   - React-utils (from `../node_modules/react-native/ReactCommon/react/utils`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - ReactNativeNavigation (from `../node_modules/react-native-navigation`)
-  - RealmJS (from `../node_modules/realm`)
   - "RNCClipboard (from `../node_modules/@react-native-community/clipboard`)"
   - RNDeviceInfo (from `../node_modules/react-native-device-info`)
   - RNLocalize (from `../node_modules/react-native-localize`)
@@ -690,8 +688,6 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon"
   ReactNativeNavigation:
     :path: "../node_modules/react-native-navigation"
-  RealmJS:
-    :path: "../node_modules/realm"
   RNCClipboard:
     :path: "../node_modules/@react-native-community/clipboard"
   RNDeviceInfo:
@@ -737,7 +733,7 @@ SPEC CHECKSUMS:
   React-jsinspector: aaed4cf551c4a1c98092436518c2d267b13a673f
   React-logger: da1ebe05ae06eb6db4b162202faeafac4b435e77
   react-native-render-html: 984dfe2294163d04bf5fe25d7c9f122e60e05ebe
-  react-native-webview: 669ae162965f629a8d6a4bdd3b99a304d36ef1f2
+  react-native-webview: 107961c73db53d66549c867a3b64eaa20d34c41f
   React-NativeModulesApple: edb5ace14f73f4969df6e7b1f3e41bef0012740f
   React-perflogger: 496a1a3dc6737f964107cb3ddae7f9e265ddda58
   React-RCTActionSheet: 02904b932b50e680f4e26e7a686b33ebf7ef3c00
@@ -755,11 +751,10 @@ SPEC CHECKSUMS:
   React-runtimescheduler: 4941cc1b3cf08b792fbf666342c9fc95f1969035
   React-utils: b79f2411931f9d3ea5781404dcbb2fa8a837e13a
   ReactCommon: 4b2bdcb50a3543e1c2b2849ad44533686610826d
-  ReactNativeNavigation: 3bf96607854b1a278560a41d892cef773353953e
-  RealmJS: 5af7e3b3c1b6de6a1f9bd62bfbf4caca749fa708
+  ReactNativeNavigation: 87b603144cfe2cac1fa04b6c71d0be814d73993b
   RNCClipboard: 41d8d918092ae8e676f18adada19104fa3e68495
-  RNDeviceInfo: 02ea8b23e2280fa18e00a06d7e62804d74028579
-  RNLocalize: dbea38dcb344bf80ff18a1757b1becf11f70cae4
+  RNDeviceInfo: db5c64a060e66e5db3102d041ebe3ef307a85120
+  RNLocalize: 4222a3756cdbe2dc9a5bdf445765a4d2572107cb
   SocketRocket: f32cd54efbe0f095c4d7594881e52619cfe80b17
   Yoga: 3efc43e0d48686ce2e8c60f99d4e6bd349aff981
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a

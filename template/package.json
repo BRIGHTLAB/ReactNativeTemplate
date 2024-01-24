@@ -30,7 +30,6 @@
     "react-native-render-html": "^6.3.4",
     "react-native-webview": "^13.6.0",
     "react-redux": "^8.1.2",
-    "realm": "^12.5.1",
     "redux": "^4.2.1",
     "redux-thunk": "^2.4.2"
   },
